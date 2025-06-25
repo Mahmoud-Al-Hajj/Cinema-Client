@@ -1,9 +1,29 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>User Profile</title>
+    <link rel="stylesheet" href="../styles/profile.css" />
   </head>
-  <body></body>
+  <body>
+    <nav class="navbar">
+      <a href="login.html">Login</a>
+      <a href="profile.html">Profile</a>
+      <a href="movies.html">Movies</a>
+      <a href="booking.html">Booking</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+    <div class="profile-container">
+      <h1>Profile Settings</h1>
+      <form class="profile-form">
+        <input type="text" placeholder="Full Name" />
+        <input type="email" placeholder="Email" />
+        <input type="tel" placeholder="Phone Number" />
+        <input type="date" placeholder="Date of Birth" />
+        <input type="text" placeholder="Favorite Genre" />
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
+  </body>
 </html>

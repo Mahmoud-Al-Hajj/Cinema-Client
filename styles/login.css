@@ -1,3 +1,4 @@
+/* General Styles */
 body {
   font-family: sans-serif;
   background: #fafafa;
@@ -6,22 +7,28 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
+  align-items: center;
+  justify-content: center;
 }
 
-form {
-  width: 300px;
+.form {
+  width: 270px;
+  margin: auto;
+  margin-right: 90px;
+  text-align: center;
 }
 
 input,
 button {
   width: 100%;
   padding: 10px;
-  margin: 5px 0;
+  margin: 5px;
   border: 1px solid #ccc;
-  box-sizing: border-box;
+  justify-content: center;
 }
 
-button {
+.button {
+  align-items: center;
   border-radius: 10px;
   background-color: #007bff;
   color: white;
@@ -30,10 +37,11 @@ button {
   width: 300px;
   margin: auto;
 }
+
 label {
   display: block;
   text-align: center;
-  margin-top: 10px;
+  margin: auto;
   cursor: pointer;
 }
 
@@ -47,9 +55,13 @@ label {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 430px;
+  max-width: 300px;
   width: 100%;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
   background: #fff;
+  text-align: center;
   border-radius: 7px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
@@ -70,11 +82,16 @@ label {
   display: none;
 }
 
+/* Form Elements */
 .form header {
   font-size: 2rem;
   font-weight: 500;
   text-align: center;
   margin-bottom: 1.3rem;
+}
+
+.form input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 
 .form input {
@@ -86,10 +103,7 @@ label {
   border: 1px solid #ddd;
   border-radius: 6px;
   outline: none;
-}
-
-.form input:focus {
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
 .form input.button {
@@ -98,9 +112,10 @@ label {
   font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 1px;
-  margin-top: 1.7rem;
+  margin: auto;
   cursor: pointer;
   transition: 0.4s;
+  display: block;
 }
 
 .form input.button:hover {
@@ -110,38 +125,15 @@ label {
 .signup {
   font-size: 17px;
   text-align: center;
+  margin-top: 1rem;
 }
 
-h1 {
-  text-align: center;
-  color: #4d4b4b;
+.signup label {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
-#movie-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1rem;
-  padding: 2rem;
-}
-
-.movie-card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem;
-  text-align: center;
-}
-
-.movie-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-}
-
-.movie-card h3 {
-  font-size: 1rem;
-  margin: 0.5rem 0;
-}
 .navbar {
   background-color: #333;
   padding: 1rem;
@@ -158,4 +150,10 @@ h1 {
 
 .navbar a:hover {
   text-decoration: underline;
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  color: #4d4b4b;
 }

@@ -1,0 +1,68 @@
+body {
+  font-family: sans-serif;
+  background: #fafafa;
+  margin: auto;
+  background-image: url("/Frontend/assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.booking-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.seat-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+  margin: 2rem 0;
+}
+
+.seat {
+  width: 25px;
+  height: 25px;
+  border-radius: 4px;
+}
+
+.available {
+  background-color: #28a745;
+}
+
+.booked {
+  background-color: #dc3545;
+}
+
+.next-button {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #333;
+  padding: 1rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
