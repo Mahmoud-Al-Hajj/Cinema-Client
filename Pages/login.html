@@ -4,26 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/login.css" />
-    <title>Login/Signup</title>
+
+    <title>Login - Register</title>
   </head>
   <body>
-    <nav class="navbar">
-      <a href="login.html">Login</a>
-      <a href="profile.html">Profile</a>
-      <a href="movies.html">Movies</a>
-      <a href="booking.html">Booking</a>
-      <a href="checkout.html">Checkout</a>
-      <a href="admin.html">Admin</a>
-    </nav>
-
     <input type="checkbox" id="check" />
 
     <div class="container">
       <div class="login form">
         <header>Login</header>
-        <form action="#">
-          <input type="text" placeholder="Enter your email" required />
-          <input type="password" placeholder="Enter your password" required />
+        <form action="/Backend/controller/user.php" method="POST">
+          <input
+            type="text"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
           <input type="submit" class="button" value="Login" />
         </form>
         <div class="signup">
@@ -34,10 +36,31 @@
 
       <div class="registration form">
         <header>Signup</header>
-        <form action="#">
-          <input type="text" placeholder="Enter your email" required />
-          <input type="password" placeholder="Create a password" required />
-          <input type="password" placeholder="Confirm your password" required />
+        <form action="/Backend/controller/register.php" method="POST">
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            required
+          />
+          <input
+            type="text"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+          <input
+            type="number"
+            name="phone"
+            placeholder="enter your phone number"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Create a password"
+            required
+          />
           <input type="submit" class="button" value="Signup" />
         </form>
         <div class="signup">

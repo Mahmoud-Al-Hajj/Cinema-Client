@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Profile</title>
     <link rel="stylesheet" href="../styles/profile.css" />
+    <link rel="stylesheet" href="/Frontend/styles/navbar.css" />
   </head>
   <body>
     <nav class="navbar">
@@ -15,14 +16,23 @@
       <a href="admin.html">Admin</a>
     </nav>
     <div class="profile-container">
+      <div class="profile-inner">
       <h1>Profile Settings</h1>
-      <form class="profile-form">
-        <input type="text" placeholder="Full Name" />
-        <input type="email" placeholder="Email" />
-        <input type="tel" placeholder="Phone Number" />
-        <input type="date" placeholder="Date of Birth" />
-        <input type="text" placeholder="Favorite Genre" />
+      <form
+        class="profile-form"
+        action="/Backend/controller/updateProfile.php"
+        method="POST"
+      >
+        <input type="text" name="name" placeholder="Full Name" />
+        <input type="email" name="email" placeholder="Email" />
+        <input type="number" name="phone" placeholder="Phone Number" />
+        <input
+          type="text"
+          name="favorite_genres"
+          placeholder="Favorite Genre"
+        />
         <button type="submit">Save Changes</button>
+        </div>
       </form>
     </div>
   </body>
