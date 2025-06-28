@@ -28,30 +28,48 @@
 /*each movie card*/
 .movie {
   background-color: #ffffff;
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  align-items: center;
   transition: transform 0.2s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  padding-bottom: 1rem;
+  text-align: center;
 }
+
 .movie:hover {
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+.movie:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
 }
 
 .movie img {
   width: 100%;
-  height: 320px;
-  object-fit: cover;
+  height: 300px;
+  object-fit: contain;
+  background-color: #f0f0f0;
+  padding: 10px;
   border-bottom: 1px solid #ddd;
+  transition: transform 0.3s ease;
 }
 
-/* Movie content */
+.movie:hover img {
+  transform: scale(1.03);
+}
+
 .movie h2 {
-  font-size: 1.25rem;
-  margin: 1rem;
-  color: #333;
+  font-size: 1.2rem;
+  margin: 0.75rem;
+  color: #222;
   text-align: center;
+  font-weight: 600;
 }
 
 .movie p {
@@ -95,4 +113,22 @@
 
 .search-bar button:hover {
   background-color: #0056b3;
+}
+
+.view-details-link {
+  align-items: center;
+  color: #4f46e5;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 6px 12px;
+  border: 2px solid #4f46e5;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.view-details-link:hover {
+  background-color: #4f46e5;
+  color: white;
+  text-decoration: none;
 }

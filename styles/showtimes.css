@@ -1,0 +1,89 @@
+body {
+  font-family: sans-serif;
+  background: #fafafa;
+  background-image: url("/Frontend/assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.text {
+  color: #eee;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.showtimes-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.showtimes-container h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+.showtime-card {
+  background: #f9faff;
+  border-radius: 12px;
+  padding: 18px 25px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.showtime-card:hover {
+  background-color: #eef4ff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+.showtime-info {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.auditorium {
+  background: #4f46e5;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 7px 20px;
+  border-radius: 24px;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 600px) {
+  .showtime-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .auditorium {
+    margin-top: 10px;
+  }
+}
+
+.button {
+  background: #4f46e5;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 7px 20px;
+  border-radius: 24px;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}

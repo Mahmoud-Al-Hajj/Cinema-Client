@@ -18,11 +18,11 @@ function renderMovies(movies) {
   movies.forEach((movie) => {
     const div = document.createElement("div");
     div.className = "movie";
-    div.innerHTML = `
-      <h2>${movie.title}</h2>
-      <p><strong>Release Date:</strong> ${movie.release_date}</p>
+    div.innerHTML = `<h2>${movie.title}</h2>
+<a href="movies_info.html?id=${movie.id}" class="view-details-link">View Details</a>
       <p><strong>Genre:</strong> ${movie.genre}</p>
       <img src="${movie.poster_url}" alt="Poster" />
+      
     `;
     container.appendChild(div);
   });
