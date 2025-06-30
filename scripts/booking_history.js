@@ -1,6 +1,11 @@
 const container = document.getElementById("booking-list");
+const userId = localStorage.getItem("userId");
 
-fetch(`/Backend/controller/get_booking.php`)
+if (!userId) {
+  window.location.href = "/Frontend/Pages/login.html";
+}
+
+fetch(`/Backend/controller/get_booking.php?user_id=${userId}`)
   .then((res) => res.json())
   .then((bookings) => {
     if (!bookings || bookings.length === 0) {
@@ -20,7 +25,7 @@ fetch(`/Backend/controller/get_booking.php`)
         <span class="booking-id">Auditorium: ${b.auditorium}</span>
                 <span class="booking-id">Seat Number: ${b.seats}</span>
         <span class="booking-status status-${b.status}">${b.status}</span>
-        <button class="btn-cancel" onclick="cancelBooking(${b.id})">Cancel</button>
+        <button class="btn-cancel" onclick="cancelBooking(${b.booking_id})">Cancel</button>
       `;
 
       ul.appendChild(li);
@@ -40,7 +45,7 @@ function cancelBooking(id) {
   fetch("/Backend/controller/delete_booking.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ booking_id: id }),
+    body: JSON.stringify({ booking_id: id, user_id: userId }),
   })
     .then((res) => res.json())
     .then((data) => {

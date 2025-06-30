@@ -36,29 +36,24 @@ document.addEventListener("DOMContentLoaded", () => {
   confirmBtn.addEventListener("click", () => {
     if (selected.size === 0) return;
 
+    const userId = localStorage.getItem("userId");
+    if (!userId) {
+      window.location.href = "/Frontend/Pages/login.html";
+      return;
+    }
+
     fetch(`/Backend/controller/book_seats.php`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
+        user_id: userId,
         showtime_id: showtimeId,
         seat_ids: Array.from(selected),
       }),
     })
       .then((res) => res.json())
       .then((res) => {
-        if (res.success) {
-          alert("Booking confirmed! Your booking ID: " + res.booking_id);
-          window.location.href = "/Frontend/Pages/booking_history.html"; // redirect to booking history page (to build)
-        } else {
-          alert("Booking failed: " + (res.error || "Unknown error"));
-          confirmBtn.disabled = false;
-          confirmBtn.textContent = "Confirm Booking";
-        }
-      })
-      .catch(() => {
-        alert("Booking request failed, please try again.");
-        confirmBtn.disabled = false;
-        confirmBtn.textContent = "Confirm Booking";
+        window.location.href = "/Frontend/Pages/booking_history.html";
       });
   });
 });
