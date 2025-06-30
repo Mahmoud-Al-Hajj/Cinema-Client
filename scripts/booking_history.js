@@ -18,6 +18,7 @@ fetch(`/Backend/controller/get_booking.php`)
       li.innerHTML = `
         <span class="booking-id">Movie: ${b.movie_title}</span>
         <span class="booking-id">Auditorium: ${b.auditorium}</span>
+                <span class="booking-id">Seat Number: ${b.seats}</span>
         <span class="booking-status status-${b.status}">${b.status}</span>
         <button class="btn-cancel" onclick="cancelBooking(${b.id})">Cancel</button>
       `;

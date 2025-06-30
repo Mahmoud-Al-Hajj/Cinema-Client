@@ -8,20 +8,73 @@
     <link rel="stylesheet" href="/Frontend/styles/navbar.css" />
   </head>
   <body>
-    <nav class="navbar">
-      <a href="login.html">Login</a>
-      <a href="profile.html">Profile</a>
-      <a href="movies.html">Movies</a>
-      <a href="booking.html">Booking</a>
-      <a href="checkout.html">Checkout</a>
-      <a href="admin.html">Admin</a>
-    </nav>
-
     <div class="admin-container">
       <h2>Admin Panel</h2>
-      <button>Add Movie</button>
-      <button>Configure Seats</button>
-      <button>Adjust Pricing</button>
+
+      <div class="admin-buttons">
+        <button onclick="showAddMovieForm()" class="btn-add">Add Movie</button>
+        <button class="btn-configure">Configure Seats</button>
+        <button class="btn-pricing">Adjust Pricing</button>
+      </div>
+
+      <div id="add-movie-form" class="movie-form" style="display: none">
+        <h3>Add New Movie</h3>
+        <form onsubmit="addMovie();">
+          <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" required />
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="release_date">Release Date:</label>
+            <input type="date" id="release_date" required />
+          </div>
+
+          <div class="form-group">
+            <label for="duration">Duration (minutes):</label>
+            <input type="number" id="duration" required />
+          </div>
+
+          <div class="form-group">
+            <label for="genre">Genre:</label>
+            <input type="text" id="genre" required />
+          </div>
+
+          <div class="form-group">
+            <label for="director">Director:</label>
+            <input type="text" id="director" required />
+          </div>
+
+          <div class="form-group">
+            <label for="poster_url">Poster URL:</label>
+            <input type="url" id="poster_url" />
+          </div>
+
+          <div class="form-buttons">
+            <button type="submit" class="btn-submit">Add Movie</button>
+            <button
+              type="button"
+              onclick="hideAddMovieForm()"
+              class="btn-cancel"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="movie-management">
+        <h3>Manage Movies</h3>
+        <div id="movie-list" class="movie-list"></div>
+      </div>
     </div>
+
+    <script src="../scripts/admin.js"></script>
+    <script src="../scripts/admin_auth.js"></script>
   </body>
 </html>

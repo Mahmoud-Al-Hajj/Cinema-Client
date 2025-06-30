@@ -9,7 +9,12 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   })
     .then((res) => res.json())
     .then((data) => {
-      localStorage.setItem("userId", data.user_id);
-      window.location.href = "/Frontend/Pages/movies.html";
+      if (data.success) {
+        localStorage.setItem("userId", data.user_id);
+        window.location.href = "/Frontend/Pages/movies.html";
+      } else {
+        alert("Incorrect email or password.");
+        window.location.href = "/Frontend/Pages/login.html";
+      }
     });
 });
