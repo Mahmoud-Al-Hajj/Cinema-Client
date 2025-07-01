@@ -1,0 +1,88 @@
+body {
+  font-family: sans-serif;
+  background: #fafafa;
+  background-image: url("/Frontend/assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #333;
+  padding: 1rem;
+  position: sticky;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+  color: #ddd;
+}
+
+.movie-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+.poster {
+  width: 300px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.info {
+  flex-grow: 1;
+}
+
+.showtimes-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.showtimes-button:hover {
+  background: #0056b3;
+}
+.view-details-link {
+  display: inline-block;
+  padding: 6px 12px;
+  color: #1a73e8;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  transition: all 0.2s ease-in-out;
+}
+
+.view-details-link:hover {
+  background-color: #e8f0fe;
+  border-color: #d2e3fc;
+  color: #174ea6;
+  text-decoration: none;
+}
+
+.view-details-link:active {
+  background-color: #d2e3fc;
+}

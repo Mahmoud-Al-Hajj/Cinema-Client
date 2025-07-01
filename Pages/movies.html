@@ -4,27 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OMDb Movie Search</title>
-    <link rel="stylesheet" href="/Frontend/styles/styles.css" />
+    <link rel="stylesheet" href="/Frontend/styles/movies.css" />
+    <link rel="stylesheet" href="/Frontend/styles/navbar.css" />
   </head>
   <body>
-    <div>
-      <nav class="navbar">
-        <a href="login.html">Login</a>
-        <a href="profile.html">Profile</a>
-        <a href="movies.html">Movies</a>
-        <a href="booking.html">Booking</a>
-        <a href="checkout.html">Checkout</a>
-        <a href="admin.html">Admin</a>
-      </nav>
-      <h1>Search Movies</h1>
-
-      <input type="text" id="search-input" placeholder="Search for a movie" />
-      <div class="button">
-        <button class="button" id="search-btn">Search</button>
-      </div>
+    <nav class="navbar">
+      <a href="login.html">Login</a>
+      <a href="profile.html">Profile</a>
+      <a href="movies.html">Movies</a>
+      <a href="booking_history.html">Booking</a>
+      <a href="admin.html" id="admin-link" style="display: none">Admin</a>
+    </nav>
+    <div class="welcome-banner">
+      Welcome to VSX Movies Smart Booking!<br />
+      <span class="welcome-catchy"
+        >Experience the future of cinema reservations—fast, easy, and
+        personalized just for you.</span
+      >
     </div>
-    <div id="movie-grid"></div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search movies..." />
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <div id="movies-container"></div>
 
     <script src="../scripts/movies.js"></script>
+    <script src="../scripts/hide_admin.js"></script>
   </body>
 </html>

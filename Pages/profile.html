@@ -4,26 +4,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Profile</title>
     <link rel="stylesheet" href="../styles/profile.css" />
+    <link rel="stylesheet" href="/Frontend/styles/navbar.css" />
   </head>
   <body>
     <nav class="navbar">
       <a href="login.html">Login</a>
       <a href="profile.html">Profile</a>
       <a href="movies.html">Movies</a>
-      <a href="booking.html">Booking</a>
-      <a href="checkout.html">Checkout</a>
-      <a href="admin.html">Admin</a>
-    </nav>
+      <a href="booking_history.html">Booking</a>
+      <a href="admin.html" id="admin-link" style="display: none">Admin</a>
+      </nav>
     <div class="profile-container">
+      <div class="profile-inner">
       <h1>Profile Settings</h1>
-      <form class="profile-form">
-        <input type="text" placeholder="Full Name" />
-        <input type="email" placeholder="Email" />
-        <input type="tel" placeholder="Phone Number" />
-        <input type="date" placeholder="Date of Birth" />
-        <input type="text" placeholder="Favorite Genre" />
+      <form
+        class="profile-form"
+        action="/Backend/controller/updateProfile.php"
+        method="POST"
+      >
+        <input type="text" name="name" placeholder="Full Name" />
+        <input type="email" name="email" placeholder="Email" />
+        <input type="number" name="phone" placeholder="Phone Number" />
+        <input
+          type="text"
+          name="favorite_genres"
+          placeholder="Favorite Genre"
+        />
         <button type="submit">Save Changes</button>
+        </div>
       </form>
     </div>
+    <script src="../scripts/ShowProfile.js"></script>
+    <script src="../scripts/hide_admin.js"></script>
   </body>
 </html>

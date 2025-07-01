@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Configure ShowTimes and Seats</title>
+    <link rel="stylesheet" href="../styles/admin.css" />
+    <link rel="stylesheet" href="/Frontend/styles/navbar.css" />
+    <link rel="stylesheet" href="../styles/configure_seats.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="movies.html">Movies</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+    <div class="admin-container">
+      <h2>Configure ShowTimes and Seats</h2>
+      <form id="movieShowtimeForm">
+        <div class="form-group">
+          <label for="movieSelect">Select Movie:</label>
+          <select id="movieSelect">
+            <option value="">-- Select --</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="showtimeSelect">Select Showtime:</label>
+          <select id="showtimeSelect">
+            <option value="">-- Select --</option>
+          </select>
+        </div>
+      </form>
+      <div>
+        <h4>Add Showtime</h4>
+        <form id="addShowtimeForm">
+          <div class="form-group">
+            <input type="datetime-local" id="newShowtime" required />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              id="newAuditorium"
+              placeholder="Auditorium"
+              required
+            />
+          </div>
+          <button type="submit" class="btn-submit">Add Showtime</button>
+        </form>
+        <div id="showtimeMsg"></div>
+      </div>
+      <div>
+        <h4>Add Seat</h4>
+        <form id="addSeatForm">
+          <div class="form-group">
+            <input
+              type="text"
+              id="seatRow"
+              placeholder="Row (ex: A)"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="number"
+              id="seatNumber"
+              placeholder="Number (ex: 1)"
+              required
+            />
+          </div>
+          <button type="submit" class="btn-submit">Add Seat</button>
+        </form>
+        <div id="seatMsg"></div>
+      </div>
+      <div id="seatsArea"></div>
+      <div id="seatModal" class="modal"></div>
+    </div>
+    <script src="../scripts/configure_seats.js"></script>
+  </body>
+</html>

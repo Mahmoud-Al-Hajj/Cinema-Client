@@ -1,28 +1,37 @@
-const apiKey = "63f2a122";
-const movieGrid = document.getElementById("movie-grid");
-const searchInput = document.getElementById("search-input");
-const searchBtn = document.getElementById("search-btn");
+let allMovies = [];
 
-searchBtn.addEventListener("click", () => {
-  const query = searchInput.value.trim();
-  if (!query) return;
+fetch("/Backend/controller/movies.php")
+  .then((res) => res.json())
+  .then((movies) => {
+    allMovies = movies;
+    renderMovies(allMovies);
+  });
 
-  fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${query}`)
-    .then((res) => res.json())
-    .then((data) => {
-      movieGrid.innerHTML = "";
-      data.Search.forEach((movie) => {
-        const card = document.createElement("div");
-        card.className = "movie-card";
-        card.innerHTML = `
-          <img src="${
-            movie.Poster !== "N/A"
-              ? movie.Poster
-              : "https://via.placeholder.com/300x450?text=No+Image"
-          }" alt="${movie.Title}" />
-          <h3>${movie.Title} (${movie.Year})</h3>
-        `;
-        movieGrid.appendChild(card);
-      });
-    });
+function renderMovies(movies) {
+  const container = document.getElementById("movies-container");
+  container.innerHTML = "";
+
+  if (!movies.length) {
+    return;
+  }
+
+  movies.forEach((movie) => {
+    const div = document.createElement("div");
+    div.className = "movie";
+    div.innerHTML = `<h2>${movie.title}</h2>
+<a href="movies_info.html?id=${movie.id}" class="view-details-link">View Details</a>
+      <p><strong>Genre:</strong> ${movie.genre}</p>
+      <img src="${movie.poster_url}" alt="Poster" />
+      
+    `;
+    container.appendChild(div);
+  });
+}
+
+document.getElementById("searchBtn").addEventListener("click", () => {
+  const term = document.getElementById("searchInput").value.toLowerCase();
+  const filtered = allMovies.filter((m) =>
+    m.title.toLowerCase().includes(term)
+  );
+  renderMovies(filtered);
 });
