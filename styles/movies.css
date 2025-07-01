@@ -58,7 +58,7 @@
 }
 
 .movie:hover img {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
 .movie h2 {
@@ -100,7 +100,7 @@
 .search-bar button {
   padding: 10px 20px;
   font-size: 1rem;
-  background-color: #007bff;
+  background-color: #007bffce;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -125,7 +125,26 @@
 }
 
 .view-details-link:hover {
-  background-color: #4f46e5;
+  background-color: #0056b3;
   color: white;
   text-decoration: none;
+}
+
+.welcome-banner {
+  background: #222;
+  color: #fff;
+  padding: 24px 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 18px;
+}
+.welcome-catchy {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #0056b3;
+  display: block;
+  margin-top: 8px;
 }
