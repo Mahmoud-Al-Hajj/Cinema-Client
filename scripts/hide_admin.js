@@ -1,7 +1,3 @@
-if (userRole !== "admin") {
-  alert("You are not admin");
-  window.location.href = "/Frontend/Pages/movies.html";
-}
 if (localStorage.getItem("role") === "admin") {
   document.getElementById("admin-link").style.display = "inline";
 } else {
