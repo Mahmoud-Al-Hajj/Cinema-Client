@@ -13,9 +13,15 @@
       <a href="profile.html">Profile</a>
       <a href="movies.html">Movies</a>
       <a href="booking_history.html">Booking</a>
-      <a href="checkout.html">Checkout</a>
-      <a href="admin.html">Admin</a>
+      <a href="admin.html" id="admin-link" style="display: none">Admin</a>
     </nav>
+    <div class="welcome-banner">
+      Welcome to VSX Movies Smart Booking!<br />
+      <span class="welcome-catchy"
+        >Experience the future of cinema reservations, fast, easy, and
+        personalized just for you.</span
+      >
+    </div>
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Search movies..." />
       <button id="searchBtn">Search</button>
@@ -24,5 +30,6 @@
     <div id="movies-container"></div>
 
     <script src="../scripts/movies.js"></script>
+    <script src="../scripts/hide_admin.js"></script>
   </body>
 </html>

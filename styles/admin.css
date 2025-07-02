@@ -6,6 +6,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   min-height: 100vh;
 }
 
@@ -149,7 +150,7 @@ body {
   background: #f8f9fa;
   border: 1px solid #dee2e6;
   border-radius: 8px;
-  transition: box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .movie-item:hover {

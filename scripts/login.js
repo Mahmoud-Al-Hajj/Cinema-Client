@@ -11,6 +11,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     .then((data) => {
       if (data.success) {
         localStorage.setItem("userId", data.user_id);
+        localStorage.setItem("role", data.role);
         window.location.href = "/Frontend/Pages/movies.html";
       } else {
         alert("Incorrect email or password.");

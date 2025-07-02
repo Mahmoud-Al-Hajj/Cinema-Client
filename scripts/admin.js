@@ -88,3 +88,7 @@ function deleteMovie(id) {
       location.reload();
     });
 }
+
+document.querySelector(".btn-configure").addEventListener("click", function () {
+  window.location.href = "configure_seats.html";
+});
