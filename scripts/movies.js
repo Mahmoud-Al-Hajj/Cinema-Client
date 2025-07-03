@@ -22,7 +22,7 @@ function renderMovies(movies) {
 <a href="movies_info.html?id=${movie.id}" class="view-details-link">View Details</a>
       <p><strong>Genre:</strong> ${movie.genre}</p>
       <img src="${movie.poster_url}" alt="Poster" />
-      
+
     `;
     container.appendChild(div);
   });
