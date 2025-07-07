@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
+  var adminLink = document.getElementById("admin-link");
+  if (!adminLink) return;
   if (localStorage.getItem("role") === "admin") {
-    document.getElementById("admin-link").style.display = "inline";
+    adminLink.style.display = "inline";
   } else {
-    document.getElementById("admin-link").style.display = "none";
+    adminLink.style.display = "none";
   }
 });

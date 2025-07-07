@@ -52,40 +52,21 @@ function addMovie() {
     });
 }
 
-function cancelBooking(id) {
-  if (!confirm("Cancel this booking?")) return;
-
-  fetch("/Backend/controller/delete_booking.php", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ booking_id: id }),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.success) {
-        alert("Booking canceled.");
-        location.reload();
-      } else {
-        alert("Error: " + data.message);
-      }
-    })
-    .catch((error) => {
-      alert("An error occurred while deleting the booking.");
-      console.error(error);
-    });
-}
-
 function deleteMovie(id) {
   if (!confirm("Are you sure you want to delete this movie?")) return;
 
   fetch("/Backend/controller/delete_movie.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ movie_id: id }),
+    body: JSON.stringify({ movie_id: id, role: localStorage.getItem("role") }),
   })
     .then((res) => res.json())
     .then((data) => {
-      location.reload();
+      if (data.success) {
+        location.reload();
+      } else {
+        alert("Failed to delete movie.");
+      }
     });
 }
 

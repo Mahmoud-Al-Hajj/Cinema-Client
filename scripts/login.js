@@ -14,7 +14,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
         localStorage.setItem("role", data.role);
         window.location.href = "/Frontend/Pages/movies.html";
       } else {
-        alert("Incorrect email or password.");
+        alert(data.message);
         window.location.href = "/Frontend/Pages/login.html";
       }
     });
