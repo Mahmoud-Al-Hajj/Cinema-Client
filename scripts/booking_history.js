@@ -24,7 +24,6 @@ fetch(`/Backend/controller/get_booking.php?user_id=${userId}`)
         <span class="booking-id">Movie: ${b.movie_title}</span>
         <span class="booking-id">Auditorium: ${b.auditorium}</span>
                 <span class="booking-id">Seat Number: ${b.seats}</span>
-        <span class="booking-status status-${b.status}">${b.status}</span>
         <button class="btn-cancel" onclick="cancelBooking(${b.booking_id})">Cancel</button>
       `;
 

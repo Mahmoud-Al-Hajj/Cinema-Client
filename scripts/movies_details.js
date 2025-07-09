@@ -23,7 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         <p><strong>Duration:</strong> ${movie.duration} mins</p>
                         <p><strong>Release Date:</strong> ${movie.release_date}</p>
                         <p>${movie.description}</p>
-                        <a class="showtimes-button" href="showtimes.html?movie_id=${movie.id}">View Showtimes</a>
+                        <a class="showtimes-button" href="showtimes.html?movie_id=${movie.id}">View Showtimes</a><br>
+                        <a class="showtimes-button" href="/Frontend/Pages/movies.html">Back to Movies</a>
+
+                        
                     </div>
                 </div>
             `;

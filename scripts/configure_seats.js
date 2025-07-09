@@ -43,27 +43,18 @@ document
     fetch(`/Backend/controller/seats.php?showtime_id=${showtimeId}`)
       .then((res) => res.json())
       .then((seats) => {
-        if (!Array.isArray(seats) || seats.length === 0) {
-          seatsArea.textContent = "No seats found for this showtime.";
-          return;
-        }
         const seatGrid = document.createElement("div");
         seats.forEach((seat) => {
           const btn = document.createElement("button");
           btn.textContent = seat.seat_row + seat.seat_number;
           btn.className =
-            "seat-btn " + (seat.is_booked == 1 ? "booked" : "available");
+            "seat-btn " + (seat.is_booked ? "booked" : "available");
           btn.disabled = seat.is_booked == 1;
           seatGrid.appendChild(btn);
         });
         seatsArea.appendChild(seatGrid);
       });
   });
-
-// Modal logic (for future seat management)
-document.getElementById("closeModalBtn").onclick = function () {
-  document.getElementById("seatModal").classList.remove("show");
-};
 
 // Add showtime
 document

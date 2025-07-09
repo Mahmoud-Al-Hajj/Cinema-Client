@@ -12,6 +12,7 @@
       <a href="profile.html">Profile</a>
       <a href="movies.html">Movies</a>
       <a href="booking_history.html">Booking</a>
+
       <a href="admin.html" id="admin-link" style="display: none">Admin</a>
       </nav>
     <div class="profile-container">
@@ -22,6 +23,7 @@
         action="/Backend/controller/updateProfile.php"
         method="POST"
       >
+        <input type="hidden" name="user_id" />
         <input type="text" name="name" placeholder="Full Name" />
         <input type="email" name="email" placeholder="Email" />
         <input type="number" name="phone" placeholder="Phone Number" />
